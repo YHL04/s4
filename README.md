@@ -21,3 +21,11 @@ Linear State Space Layer: https://arxiv.org/pdf/2110.13985.pdf
 
 Structured State Spaces: https://arxiv.org/pdf/2111.00396.pdf
 
+
+Additional Resources:
+
+
+Presentation from author on s4: https://www.youtube.com/watch?v=luCBXCErkCs
+
+
+
