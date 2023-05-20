@@ -35,6 +35,7 @@ def example_ssm():
 
     # Approximation of y(t).
     y = run_SSM(*ssm, u)
+    print(y.shape)
 
     # Plotting
     import matplotlib.pyplot as plt

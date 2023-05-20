@@ -56,7 +56,9 @@ def test_cnn_is_rnn(N=4, L=16, step=1.0 / 16):
 
     # CNN
     ssmb = discretize(*ssm, step=step)
+    print("u ", u.shape)
     conv = causal_convolution(u, K_conv(*ssmb, L))
+    print("conv ", conv.shape)
 
     # Check
     assert np.allclose(rec.ravel(), conv.ravel())
