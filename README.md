@@ -7,15 +7,15 @@ Generated Mnist
 
 0 epoch
 
-![alt text](https://github.com/YHL04/images/20.png)
+![alt text](https://github.com/YHL04/s4/blob/main/images/17.png)
 
 20 epoch
 
-![alt text](https://github.com/YHL04/s4/images/20.png)
+![alt text](https://github.com/YHL04/s4/blob/main/images/17.png)
 
 40 epoch
 
-![alt text](https://github.com/YHL04/s4/images/40.png)
+![alt text](https://github.com/YHL04/s4/blob/main/images/17.png)
 
 
 
