@@ -9,6 +9,9 @@ Following blog post from The Annotated S4:
 https://srush.github.io/annotated-s4/#tangent-a-mechanics-example
 
 
+Original Github:
+
+https://github.com/HazyResearch/state-spaces
 
 
 Series of papers that led to S4:
