@@ -1,59 +1,62 @@
 
 
-from flax import linen as nn
-from layer import S4Layer
+import torch
+import torch.nn as nn
 
-
-class SequenceBlock(nn.Module):
-    dropout: float
-    d_model: int
-
-    def setup(self):
-        self.seq = S4Layer()
-        self.norm = nn.LayerNorm()
-        self.out = nn.Dense(self.d_model)
-        self.drop = nn.Dropout(self.dropout, broadcast_dims=[0])
-
-    def __call__(self, x):
-        skip = x
-        x = self.norm(x)
-        x = self.seq(x)
-        x = self.drop(nn.gelu(x))
-        x = self.out(x)
-        x = skip + self.drop(x)
-
-        return x
+from s4 import S4Block
 
 
 class Model(nn.Module):
-    d_output: int
-    d_model: int
-    n_layers: int
-    dropout: float = 0.0
 
-    def setup(self):
-        self.encoder = nn.Dense(self.d_model)
-        self.decoder = nn.Dense(self.d_output)
+    def __init__(self, d_output, d_model, n_layers, dropout, transposed):
+        super().__init__()
+
+        self.encoder = nn.Sequential(
+            nn.Linear(d_output, d_model),
+            nn.GELU()
+        )
+        self.decoder = nn.Sequential(
+            nn.Linear(d_model, d_output),
+            nn.Sigmoid()
+        )
         self.layers = [
-            SequenceBlock(
-                d_model=self.d_model,
-                dropout=self.dropout
+            S4Block(
+                d_model=d_model,
+                dropout=dropout,
+                transposed=transposed,
+                final_act="gelu",
+                weight_norm=True
             )
-            for _ in range(self.n_layers)
+            for _ in range(n_layers)
         ]
 
-    def __call__(self, x):
+        for layer in self.layers:
+            layer.cuda()
+            layer.setup_step()
+
+    def forward(self, x):
         x = self.encoder(x)
         for layer in self.layers:
-            x = layer(x)
+            x, state = layer(x)
         x = self.decoder(x)
-        return nn.log_softmax(x, axis=-1)
+        return x
 
+    @torch.no_grad()
+    def step(self, x, states):
+        x = self.encoder(x)
 
-if __name__ == "__main__":
-    import torch
+        new_states = []
+        for layer, state in zip(self.layers, states):
+            x, state = layer.step(x, state)
+            new_states.append(state)
+        x = self.decoder(x)
+        return x, new_states
 
-    model = Model(d_output=1, d_model=64, n_layers=4)
+    def get_state(self):
+        new_states = []
+        for layer in self.layers:
+            state = layer.default_state()
+            new_states.append(state)
 
-    x = torch.rand(3, 3)
-    print(model(x))
+        return new_states
+
