@@ -5,17 +5,17 @@ S4 achieved state of the art results in many long sequence benchmarks
 
 Generated Mnist
 
-0 epoch
+1 epoch
 
-![alt text](https://github.com/YHL04/s4/blob/main/images/0.png)
+![alt text](https://github.com/YHL04/s4/blob/main/images/1.png)
 
 20 epoch
 
 ![alt text](https://github.com/YHL04/s4/blob/main/images/20.png)
 
-40 epoch
+47 epoch
 
-![alt text](https://github.com/YHL04/s4/blob/main/images/40.png)
+![alt text](https://github.com/YHL04/s4/blob/main/images/47.png)
 
 
 
