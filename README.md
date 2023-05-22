@@ -6,7 +6,9 @@ S4 achieved state of the art results in many long sequence benchmarks
 
 ## Following blog post from The Annotated S4:
 
-https://srush.github.io/annotated-s4/#tangent-a-mechanics-example
+The Annotated S4: https://srush.github.io/annotated-s4/
+
+The Annotated S4D: https://srush.github.io/annotated-s4/s4d.html
 
 
 
@@ -16,7 +18,7 @@ https://github.com/HazyResearch/state-spaces
 
 
 
-## Series of papers that led to S4:
+## Series of papers:
 
 
 HiPPO blog: https://hazyresearch.stanford.edu/blog/2020-12-05-hippo
@@ -27,6 +29,7 @@ Linear State Space Layer: https://arxiv.org/pdf/2110.13985.pdf
 
 Structured State Spaces: https://arxiv.org/pdf/2111.00396.pdf
 
+Diagonal Structured State Space: https://arxiv.org/pdf/2203.14343.pdf
 
 
 ## Additional Resources:
