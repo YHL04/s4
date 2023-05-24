@@ -4,6 +4,19 @@
 S4 achieved state of the art results in many long sequence benchmarks
 
 
+## Generating Sequence MNIST Results:
+
+0 Epoch
+
+
+100 Epoch
+
+
+200 Epoch
+
+
+
+
 ## Following blog post from The Annotated S4:
 
 The Annotated S4: https://srush.github.io/annotated-s4/
