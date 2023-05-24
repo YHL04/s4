@@ -6,6 +6,8 @@ S4 achieved state of the art results in many long sequence benchmarks
 
 ## Generating Sequence MNIST Results:
 
+(Treating mnist as a sequence and finish sequence after 400 pixels using s4)
+
 0 Epoch
 
 ![alt text](https://github.com/YHL04/s4/blob/main/images/0.png "Plot")
