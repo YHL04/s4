@@ -8,12 +8,15 @@ S4 achieved state of the art results in many long sequence benchmarks
 
 0 Epoch
 
+![alt text](https://github.com/YHL04/s4/0.png "Plot")
 
 100 Epoch
 
+![alt text](https://github.com/YHL04/s4/99.png "Plot")
 
 200 Epoch
 
+![alt text](https://github.com/YHL04/s4/199.png "Plot")
 
 
 
