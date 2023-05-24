@@ -8,19 +8,9 @@ S4 achieved state of the art results in many long sequence benchmarks
 
 (Treating mnist as a sequence and finish sequence after 400 pixels using s4)
 
-0 Epoch
+0 Epoch / 100 Epoch / 200 Epoch
 
-![alt text](https://github.com/YHL04/s4/blob/main/images/0.png "Plot")
-
-100 Epoch
-
-![alt text](https://github.com/YHL04/s4/blob/main/images/99.png "Plot")
-
-200 Epoch
-
-![alt text](https://github.com/YHL04/s4/blob/main/images/199.png "Plot")
-
-
+![alt text](https://github.com/YHL04/s4/blob/main/images/0.png "Plot") ![alt text](https://github.com/YHL04/s4/blob/main/images/99.png "Plot") ![alt text](https://github.com/YHL04/s4/blob/main/images/199.png "Plot")
 
 
 ## Following blog post from The Annotated S4:
