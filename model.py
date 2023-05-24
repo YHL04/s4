@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 
 from s4 import S4Block
+from s4d import S4D
 
 
 class Model(nn.Module):
@@ -24,12 +25,20 @@ class Model(nn.Module):
                 d_model=d_model,
                 dropout=dropout,
                 transposed=transposed,
-                final_act="gelu",
-                weight_norm=True
+                final_act="glu"
             )
             for _ in range(n_layers)
         ]
+        # self.layers = [
+        #     S4D(
+        #         d_model=d_model,
+        #         dropout=dropout,
+        #         transposed=transposed
+        #     )
+        #     for _ in range(n_layers)
+        # ]
 
+    def setup(self):
         for layer in self.layers:
             layer.cuda()
             layer.setup_step()

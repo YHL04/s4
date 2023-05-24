@@ -1206,6 +1206,7 @@ class SSMKernelDiag(SSMKernel):
         next_state = AL * state + v
         return next_state
 
+
 class SSMKernelDPLR(SSMKernelDiag):
     """SSM kernel for diagonal + low rank (DPLR) state matrices, corresponding to the original S4 model."""
 
@@ -1621,6 +1622,7 @@ kernel_registry = {
     'dplr': SSMKernelDPLR,
 }
 
+
 class FFTConv(nn.Module):
     """Implements an FFT Convolution around a convolution kernel.
 
@@ -1875,8 +1877,6 @@ class S4Block(nn.Module):
                 activation=final_act,
                 activate=True,
             )
-
-
 
     def forward(self, x, lengths=None, **kwargs): # absorbs return_output and transformer src mask
         """
